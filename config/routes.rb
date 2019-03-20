@@ -8,3 +8,8 @@ end
 Rails.application.routes.draw do
   resources :articles
 end
+
+Rails.application.routes.draw do
+  resources :contacts, only: [:new, :create]
+end
+
