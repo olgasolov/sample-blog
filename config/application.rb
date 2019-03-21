@@ -1,3 +1,4 @@
+require "rack/utf8_sanitizer"
 require_relative 'boot'
 
 require 'rails/all'
@@ -10,6 +11,8 @@ module Blog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
+config.middleware.insert 0, Rack::UTF8Sanitizer
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
