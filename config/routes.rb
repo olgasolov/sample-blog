@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 end
 
 Rails.application.routes.draw do
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create], path_names: { :new => '' }
 end
 
