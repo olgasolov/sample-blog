@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
-  get '/' => 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+  get 'home/index'
+  
+  get 'terms' => 'pages#terms'
+  get 'about' => 'pages#about'
 
-#resources :articles
 
-Rails.application.routes.draw do
   resources :articles
+  resource :contacts, only: [:new, :create], path_names: { :new => '' }
 end
 
-Rails.application.routes.draw do
-  resources :contacts, only: [:new, :create], path_names: { :new => '' }
-end
-
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
